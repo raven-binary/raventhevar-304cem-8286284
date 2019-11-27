@@ -1,3 +1,6 @@
+//Heroku
+var PORT = process.env.PORT || 5000;
+
 //Dependencies Module Import
 const express = require('express');
 const app = express();
