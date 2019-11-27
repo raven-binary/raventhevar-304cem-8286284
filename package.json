@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node Assignment.js",
     "server": "nodemon Assignment.js",
-    "client": "npm start --prefix client",
+    "client": "npm start",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Raven Thevar",
