@@ -25,6 +25,5 @@
     "mongodb": "^3.3.4",
     "mongoose": "^5.7.12",
     "save": "^2.4.0"
-  },
-  "proxy": "https://raventhevar-304cem-8286284.herokuapp.com/"
+  }
 }
