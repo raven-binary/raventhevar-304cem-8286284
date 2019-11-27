@@ -1,8 +1,5 @@
 //Heroku
 var port = process.env.PORT || 8080;
-app.listen(port,function() {
-    console.log("app running on port 8080"); 
-});
 
 //Dependencies Module Import
 const express = require('express');
@@ -523,6 +520,9 @@ app.post('/updateClose', async (req, res) => {
     
 });
 
+app.listen(port,function() {
+    console.log("app running on port 8080"); 
+});
 
 /*app.listen(8080, ()=>{
 
