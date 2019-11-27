@@ -60,6 +60,7 @@ app.get('/error4', (req,res) => {
 });
 
 //Functions start from here
+//The get Register Function
 app.get('/register', (req,res) => {
     if (req.session.whois != null)
     {
@@ -70,7 +71,7 @@ app.get('/register', (req,res) => {
         res.render('register.ejs', {name:req.session.whois});
     }
 });
-
+//The post Register Function
 app.post('/register', async (req, res) => {
     try 
     {
@@ -108,7 +109,7 @@ app.post('/register', async (req, res) => {
         res.redirect('/register');
     }
 });
-
+//The get Login Function
 app.get('/login', (req,res) => {
     if (req.session.whois != null)
     {
@@ -119,7 +120,7 @@ app.get('/login', (req,res) => {
         res.render('login.ejs', {name:req.session.whois});
     }
 });
-
+//The post Login Function
 app.post('/login', async (req,res) => {
     try
     {
@@ -148,7 +149,7 @@ app.post('/login', async (req,res) => {
         res.redirect('/login');
     }
 });
-
+//The get Search Function
 app.get('/search', (req,res) => {
     if (req.session.whois == null)
     {
@@ -159,7 +160,7 @@ app.get('/search', (req,res) => {
         res.render('search.ejs', {name:req.session.whois, companies:req.session.company, date:req.session.date, oprice:req.session.oprice, cprice:req.session.cprice, rate:req.session.rate, opricemyr:req.session.opricemyr, cpricemyr:req.session.cpricemyr});
     }
 });
-
+//The post Search Function
 app.post('/search', async (req,res) => {
     
     try
@@ -265,7 +266,7 @@ app.post('/search', async (req,res) => {
         res.status(400).json(error);
     }
 });
-
+//The get Book Function
 app.get('/book', (req,res) => {
     if (req.session.whois == null)
     {
@@ -276,7 +277,7 @@ app.get('/book', (req,res) => {
         res.render('book.ejs', {name:req.session.whois});
     }
 });
-
+//The post Book Function
 app.post('/book', async (req,res) => {
     
     try
@@ -389,15 +390,15 @@ app.post('/book', async (req,res) => {
     }
 });
 
-//More Express     
-app.get('https://raventhevar-304cem-8286284.herokuapp.com/view', (req,res) => {
+//The get View Function
+app.get('/view', (req,res) => {
     Analytic.find()
     .then (function(doc) {
         res.render('view.ejs', {name:req.session.whois, items:doc});
         console.log(doc);
     });
 });
-
+//The get Find Function
 app.get('/find', (req, res) => {
     if (req.session.whois == null)
     {
@@ -413,7 +414,7 @@ app.get('/find', (req, res) => {
         });
     }
 });
-
+//The get Delete Function
 app.get('/delete', (req,res) => {
     if (req.session.whois == null)
     {
@@ -428,7 +429,7 @@ app.get('/delete', (req,res) => {
         });
     }
 });
- 
+//The post Delete Function
 app.post('/delete', async (req, res) => {
     try
     {
@@ -447,7 +448,7 @@ app.post('/delete', async (req, res) => {
         res.redirect('/error4');
     }
 });
-
+//The get UpdateOpen Function
 app.get('/updateOpen', (req,res) => {
     if (req.session.whois == null)
     {
@@ -462,7 +463,7 @@ app.get('/updateOpen', (req,res) => {
         });
     }
 });
-
+//The post UpdateOpen Function
 app.post('/updateOpen', async (req, res) => {
     try
     {
@@ -483,7 +484,7 @@ app.post('/updateOpen', async (req, res) => {
     }
     
 });
-
+//The get UpdateClose Function
 app.get('/updateClose', (req,res) => {
     if (req.session.whois == null)
     {
@@ -498,7 +499,7 @@ app.get('/updateClose', (req,res) => {
         });
     }
 });
-
+//The post UpdateClose Function
 app.post('/updateClose', async (req, res) => {
     try
     {
@@ -519,7 +520,7 @@ app.post('/updateClose', async (req, res) => {
     }
     
 });
-
+//App Listen for ports.
 app.listen(port,function() {
     console.log("app running on port 8080"); 
 });
