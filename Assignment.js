@@ -390,7 +390,7 @@ app.post('/book', async (req,res) => {
 });
 
 //More Express     
-app.get('/view', (req,res) => {
+app.get('https://raventhevar-304cem-8286284.herokuapp.com/view', (req,res) => {
     Analytic.find()
     .then (function(doc) {
         res.render('view.ejs', {name:req.session.whois, items:doc});
@@ -523,9 +523,3 @@ app.post('/updateClose', async (req, res) => {
 app.listen(port,function() {
     console.log("app running on port 8080"); 
 });
-
-/*app.listen(8080, ()=>{
-
-    console.log('server listening on post 5000');
-    
-});*/
